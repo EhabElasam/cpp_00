@@ -3,36 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eelasam <Ehab@student.42vienna.com>        +#+  +:+       +#+        */
+/*   By: eelasam <EHAB@student.42vienna.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 11:30:28 by eelasam           #+#    #+#             */
-/*   Updated: 2023/09/04 14:42:07 by eelasam          ###   ########.fr       */
+/*   Updated: 2023/09/11 12:51:47 by eelasam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cctype>
 
-int main(int ac, char **av)
+int main(int argc, char **argv)
 {
-    int i;
-    int j;
-
-    i = 0;
-    j = 0;
-    if (ac < 2)
-        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-    while (ac > 1 && av && av[j])
+    std::string args;
+    if (argc < 2)
     {
-        i = 0;
-        while (j > 0 && av[j][i])
-        {
-            std::cout << (char)std::toupper(av[j][i]);
-            i++;
-        }
-        j++;
+        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
     }
-    std::cout << std::endl;
-    return (0);
+    else
+    {
+        
+        for (int j = 1; j < argc; j++)
+        {
+            
+            args += argv[j];
+            for(int i = 0; args[i]; i++)
+                args.at(i) = std::toupper(args.at(i));
+        }
+    }
+    std::cout << args << std::endl;
+    return 0;
 }
 
-// using namespace std;
