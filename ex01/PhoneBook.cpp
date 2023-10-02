@@ -6,7 +6,7 @@
 /*   By: eelasam <EHAB@student.42vienna.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:05:44 by eelasam           #+#    #+#             */
-/*   Updated: 2023/09/14 14:45:57 by eelasam          ###   ########.fr       */
+/*   Updated: 2023/09/14 15:59:30 by eelasam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,30 +47,17 @@ void PhoneBook::searchContacts() const
     }
 
     std::cout << "Enter index of contact to display: ";
-/*     if (std::cin >> index && index >= 0 && index < contactCount)
-    {
-        displayContact(contacts[index]);
-        std::cin.ignore(1000, '\n');
-    }
-    else
-    {
-        //Exit_check();
-        std::cout << "Invalid index." << std::endl;
-        std::cin.clear();
-        std::cin.ignore(1000, '\n'); 
-    }   */ 
     if (!(std::cin >> index ) || index < 0 || index >= contactCount)
     {
         int w = 0;
         std::cin.clear();
         std::cin.ignore(1000, '\n');
-        if(index != 0 )
+        if(index == 0 || index < 0 || index >= contactCount)
         {
-           exit(0);
-            
+           w = 1;
         }
-        if (!w)
-        std::cout << "Invalid index." << std::endl;
+        if (!w || (!std::cin.eof() && !std::cin.fail()))
+            std::cout << "Invalid index." << std::endl;
     }
     else
     {

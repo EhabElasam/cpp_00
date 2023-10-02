@@ -6,7 +6,7 @@
 /*   By: eelasam <EHAB@student.42vienna.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 13:05:55 by eelasam           #+#    #+#             */
-/*   Updated: 2023/09/12 16:15:37 by eelasam          ###   ########.fr       */
+/*   Updated: 2023/09/14 16:08:07 by eelasam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <iostream>
 # include <iomanip>
-# include <stdlib.h>
+# include <cstdlib>
 # include "Contact.hpp"
 
 class PhoneBook
